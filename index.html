@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viral News India | Latest Updates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="ad-container top-ad">
+        <p>-- Advertisement --</p>
+        <img src="https://via.placeholder.com/728x90?text=Top+Banner+Ad" alt="Top Ad">
+    </div>
+
+    <header>
+        <div class="logo">Viral News India</div>
+        <nav class="main-nav">
+            <a href="#" onclick="fetchNews('india')">India</a>
+            <a href="#" onclick="fetchNews('trading')">Trading</a>
+            <a href="#" onclick="fetchNews('cricket')">Cricket</a>
+            <a href="#" onclick="fetchNews('entertainment')">Entertainment</a>
+            <a href="#" onclick="fetchNews('world')">World</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar left-ad">
+            <div class="sticky-ad">
+                <p>AD</p>
+                <img src="https://via.placeholder.com/160x600?text=Vertical+Ad" alt="Left Ad">
+            </div>
+        </aside>
+
+        <main class="content">
+            <h2 id="category-title">Latest News</h2>
+            <div id="news-grid">
+                <p>News Load ho rahi hai...</p>
+            </div>
+        </main>
+
+        <aside class="sidebar right-content">
+            <div class="ad-container square-ad">
+                <p>AD</p>
+                <img src="https://via.placeholder.com/300x250?text=Square+Ad" alt="Right Ad">
+            </div>
+            
+            <div class="trending-box">
+                <h3>Trending News</h3>
+                <div id="trending-list">
+                    </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
