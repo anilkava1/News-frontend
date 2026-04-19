@@ -8,47 +8,49 @@
 </head>
 <body>
 
-    <div class="ad-container top-ad">
-        <p>-- Advertisement --</p>
-        <img src="https://via.placeholder.com/728x90?text=Top+Banner+Ad" alt="Top Ad">
+    <div class="ad-wrapper top-ad-area">
+        <p class="ad-label">Advertisement</p>
+        <div class="ad-placeholder">
+            <img src="https://via.placeholder.com/728x90?text=Responsive+Banner+Ad" alt="Ad">
+        </div>
     </div>
 
     <header>
-        <div class="logo">Viral News India</div>
-        <nav class="main-nav">
-            <a href="#" onclick="fetchNews('india')">India</a>
-            <a href="#" onclick="fetchNews('trading')">Trading</a>
-            <a href="#" onclick="fetchNews('cricket')">Cricket</a>
-            <a href="#" onclick="fetchNews('entertainment')">Entertainment</a>
-            <a href="#" onclick="fetchNews('world')">World</a>
-        </nav>
+        <div class="header-container">
+            <div class="logo">Viral News India</div>
+            <nav class="main-nav">
+                <a href="#" onclick="fetchNews('india')">India</a>
+                <a href="#" onclick="fetchNews('trading')">Trading</a>
+                <a href="#" onclick="fetchNews('cricket')">Cricket</a>
+                <a href="#" onclick="fetchNews('entertainment')">Entertainment</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <aside class="sidebar left-ad">
+    <div class="main-wrapper">
+        <aside class="sidebar left-sidebar">
             <div class="sticky-ad">
-                <p>AD</p>
-                <img src="https://via.placeholder.com/160x600?text=Vertical+Ad" alt="Left Ad">
+                <p class="ad-label">AD</p>
+                <img src="https://via.placeholder.com/160x600?text=Vertical+Ad" alt="Ad">
             </div>
         </aside>
 
-        <main class="content">
-            <h2 id="category-title">Latest News</h2>
+        <main class="content-area">
+            <h2 id="category-title">Latest Updates</h2>
             <div id="news-grid">
-                <p>News Load ho rahi hai...</p>
+                <div class="loading">Fresh news load ho rahi hai...</div>
             </div>
         </main>
 
-        <aside class="sidebar right-content">
-            <div class="ad-container square-ad">
-                <p>AD</p>
-                <img src="https://via.placeholder.com/300x250?text=Square+Ad" alt="Right Ad">
+        <aside class="sidebar right-sidebar">
+            <div class="ad-wrapper square-ad">
+                <p class="ad-label">AD</p>
+                <img src="https://via.placeholder.com/300x250?text=Square+Ad" alt="Ad">
             </div>
             
-            <div class="trending-box">
-                <h3>Trending News</h3>
-                <div id="trending-list">
-                    </div>
+            <div class="trending-section">
+                <h3>Trending Now</h3>
+                <div id="trending-list"></div>
             </div>
         </aside>
     </div>

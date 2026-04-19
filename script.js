@@ -4,8 +4,8 @@ async function fetchNews(category) {
     const container = document.getElementById('news-grid');
     const title = document.getElementById('category-title');
     
-    title.innerText = `Latest ${category.charAt(0).toUpperCase() + category.slice(1)} News`;
-    container.innerHTML = "<p>Loading news from Hugging Face...</p>";
+    title.innerText = `${category.charAt(0).toUpperCase() + category.slice(1)} News`;
+    container.innerHTML = "<div class='loading'>Fetching latest stories...</div>";
 
     try {
         const response = await fetch(`${API_URL}?cat=${category}`);
@@ -15,29 +15,29 @@ async function fetchNews(category) {
             container.innerHTML = "";
             data.results.forEach(item => {
                 container.innerHTML += `
-                    <div class="news-card">
-                        <img src="${item.image || 'https://via.placeholder.com/220x140'}" alt="img">
+                    <article class="news-card">
+                        <img src="${item.image || 'https://via.placeholder.com/300x200?text=News+Image'}" alt="Viral News">
                         <div class="news-info">
                             <h3><a href="${item.url}" target="_blank" style="text-decoration:none; color:inherit;">${item.title}</a></h3>
-                            <p>${item.description ? item.description.substring(0, 150) : 'No description available'}...</p>
+                            <p>${item.description ? item.description.substring(0, 140) : 'Click to read the full story on Viral News India.'}...</p>
                         </div>
-                    </div>`;
+                    </article>`;
             });
             updateTrending(data.results.slice(0, 5));
         } else {
-            container.innerHTML = "<p>Koi news nahi mili.</p>";
+            container.innerHTML = "<p>Nayi khabrein abhi raaste mein hain. Dobara try karein!</p>";
         }
     } catch (e) {
-        container.innerHTML = "<p>Backend connection error!</p>";
+        container.innerHTML = "<p>Server se connect nahi ho pa raha. Internet check karein.</p>";
     }
 }
 
 function updateTrending(items) {
     const trendBox = document.getElementById('trending-list');
     trendBox.innerHTML = items.map(item => `
-        <p style="padding: 10px 0; border-bottom: 1px solid #eee; font-size:14px;">
-            <a href="${item.url}" target="_blank" style="text-decoration:none; color:#333;">• ${item.title}</a>
-        </p>
+        <div style="padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+            <a href="${item.url}" target="_blank" style="text-decoration:none; color:#444; font-size:14px; font-weight:600;">• ${item.title}</a>
+        </div>
     `).join('');
 }
 
