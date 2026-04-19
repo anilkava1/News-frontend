@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /static/
+Allow: /category/
+
+# Sitemap ka full URL dena zaroori hai
+Sitemap: https://anilkava1.github.io/News-frontend/sitemap.xml
